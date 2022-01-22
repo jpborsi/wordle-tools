@@ -42,5 +42,5 @@ class LetterNotInPosition(Condition):
         return self.letter in word.upper() and word.upper()[self.pos - 1] != self.letter
 
 
-def get_possible_words(words: List[str], conditions: List[Condition]) -> List[str]:
+def get_possible_words(words: List[str], *conditions: Condition) -> List[str]:
     return [w for w in words if all([c.applies(w) for c in conditions])]

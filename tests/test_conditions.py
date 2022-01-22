@@ -1,4 +1,4 @@
-from wordle_tools.list_possible_words import (
+from wordle_tools.filter_words import (
     LetterNotPresent,
     LetterInPosition,
     LetterNotInPosition,
