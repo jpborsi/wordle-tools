@@ -18,3 +18,15 @@ def get_result(answer: str, guess: str) -> List[Condition]:
         elif guess[pos] not in guess[:pos]:
             result += [LetterNotPresent(guess[pos])]
     return result
+
+
+def get_result_string(answer: str, guess: str) -> str:
+    result = ""
+    for pos in range(5):
+        if answer.upper()[pos] == guess.upper()[pos]:
+            result += answer[pos]
+        elif guess.upper()[pos] in answer.upper():
+            result += "?"
+        else:
+            result += "_"
+    return result.upper()
